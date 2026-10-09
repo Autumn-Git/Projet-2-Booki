@@ -1,6 +1,7 @@
 /****** General ***********/
 * {
     font-family: 'Raleway', sans-serif;
+    margin: 0;
 }
 
 :root {
@@ -164,4 +165,27 @@ a {
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
     /* ... */
+}
+
+/*mon code*/
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 50px;
+
+}
+.nav-header {
+    display: flex;
+    gap: 68px;
+    list-style: none;
+
+}
+.nav-header a:hover {
+    color: var(--main-color);
+    border-top: 2px solid var(--main-color);
+    padding-top: 28px;  /*je n'ai pas vu d'indication dans figma contenant ke nb de pixel du padding alors j'ai invienté*/
+
+}
+.header-logo {
+    width: 61.9px;
 }
