@@ -189,3 +189,53 @@ header {
 .header-logo {
     width: 61.9px;
 }
+
+.principale-section{
+    padding: 50px;
+}
+.main-title{
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.main-subtitle{
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 35px;
+}
+/*Fonction rechercher*/
+.search-form{
+    border-radius: 15px;
+    display: flex;
+
+}
+.localisation-icone{
+    background-color: #F2F2F2;
+    box-sizing: border-box;
+    padding: 15px 16px;
+    border-radius: 15px 0px 0px 15px;
+    color: black;
+
+}
+#search{
+    padding: 15px 16px;
+    font-weight: 700;
+    font-size: 18px;
+    border-top: 1px solid #F2F2F2;
+    border-bottom: 1px solid #F2F2F2;
+    border-left: none;
+}
+.search-button{
+    padding: 15px 16px;
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+    background-color: #0065FC;
+    border-radius: 0px 15px 15px 0px;
+    border: none;
+    margin-left: -5px;
+}
+input::placeholder {
+    color: black;
+    text-align: center;
+}
