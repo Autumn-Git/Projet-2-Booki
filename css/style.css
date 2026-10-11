@@ -167,6 +167,16 @@ a {
     /* ... */
 }
 
+
+
+
+
+
+
+
+
+
+
 /*mon code*/
 header {
     display: flex;
@@ -284,3 +294,46 @@ input::placeholder {
 }
 /*pas besoin de modifs sur le p puyisque c'est les réglages préenregister*/
 
+
+
+
+/* mon code -- section hebergements*/
+.card-hebergement {
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px;
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+
+.card-hebergement img {
+    object-fit: cover;
+    width: 250.3333282470703px;
+    height: 124px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.card-content-hebergement{
+    padding: 8px 15px;
+    /* padding-bottom: 8px; */
+}
+.card-subtitle-hebergement{
+    padding-bottom: 8px;
+}
+.card-title-hebergement{
+    font-size: 16px;
+    padding-bottom: 8px;
+}
+.populaires-cards-hebergements {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.section-title-hebergement{
+    margin-bottom: 30px;
+}
+.lien-plus-hebergement{
+    font-size: 16px;
+    font-weight: 700;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
