@@ -292,6 +292,7 @@ input::placeholder {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
+    padding-bottom: 35px;
 }
 .section-title-hebergement{
     margin-bottom: 30px;
@@ -299,8 +300,8 @@ input::placeholder {
 .lien-plus-hebergement{
     font-size: 16px;
     font-weight: 700;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    margin-top: 50px;
+    padding-top: 50px;
 }
 
 
@@ -382,6 +383,14 @@ footer{
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
 
+    .main-container{
+        width: 100%;
+        max-width: 1024px;
+        min-width: 767.98px;
+        padding: 0 50px;
+        box-sizing: border-box;
+    }
+
     .hebergements-and-populaires {
         flex-direction: column;
     }
@@ -447,6 +456,8 @@ footer{
         box-sizing: border-box;
     }
 
+
+
     /*HEADER*/
     header{
         display: flex;
@@ -457,11 +468,13 @@ footer{
         width: 61px;
         display: flex;
         margin: auto;
-        padding: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
     .nav-header{
         display: flex;
         justify-content: space-between;
+        padding: 0;
     }
     .nav-header a:hover {
         border-bottom: 2px solid var(--main-color);
@@ -487,19 +500,22 @@ footer{
         display: none;
     }
 
+    /*Filtres*/
 
     .filtres-header{
-        width: 84%;
-        box-sizing: border-box;
+        gap: 10px;
     }
     .card-filtres{
-        width: 48%;
+        width: calc(50% - 8px);
         height: 50px;
-        gap: 10px;
+        box-sizing: border-box;
     }
     .four-card-filtres{
         display: flex;
+        padding-bottom: 50px;
     }
+
+
 
 
     .a-activites-card {
@@ -512,6 +528,16 @@ footer{
     /*hebergements et populaires*/
     .hebergements-and-populaires {
         flex-direction: column-reverse;
+    }
+
+    .hebergements-and-populaires section {
+    border-radius: 0px;
+    padding: 30px 0px;
+    background-color: white;
+    }
+    .principale-section{
+        padding: 20px;
+        padding-top: 35px;
     }
 
 
@@ -529,9 +555,11 @@ footer{
 }
 
     /*populaire*/
-    .populaires {
+    .populaires section{
         width: 100%;
-        margin: auto;
+        /*margin: auto;*/
+        margin-bottom: 35px;
+        background-color: #D9D9D9;
     }
 
     .populaires-cards {
@@ -544,12 +572,8 @@ footer{
 
     /*Footer*/
     footer{
-        display: flex;
         flex-direction: column;
-        width: 100%;
         margin: 0;
+        gap: 15px;
     }
-    .footer-column{
-    padding-bottom: 30px;
-}
 }
