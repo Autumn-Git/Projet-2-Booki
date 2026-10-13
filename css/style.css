@@ -9,6 +9,7 @@
     --main-color: #0065FC;
     --main-bg-color: #F2F2F2;
     --filter-bg-color: #DEEBFF;
+    --border-color: #d9d9d9;
 }
 
 .fa-solid {
@@ -33,10 +34,11 @@ a {
     text-decoration: none;
 }
 
-.section-title {
+/*.section-title {.  remplassé par le H2
     margin: 0;
     font-size: 22px;
-}
+    padding-bottom: 30px;
+}. */
 
 .card {
     background-color: white;
@@ -48,7 +50,13 @@ a {
 .card img {
     object-fit: cover;
 }
-
+h2{
+    font-size: 22px;
+    padding-bottom: 30px;
+}
+h3{
+    font-size: 16px;
+}
 .card-title {
     font-size: 16px;
 }
@@ -61,97 +69,20 @@ a {
     color: var(--main-bg-color)
 }
 
-/****** Hebergements And Populaires ***********/
-.hebergements-and-populaires {
-    display: flex;
-    justify-content: space-between;
-}
-
-.hebergements-and-populaires section {
-    background-color: var(--main-bg-color);
-    border-radius: 20px;
-    padding: 30px;
-    box-sizing: border-box;
-}
-
-/****** Hebergements ***********/
-.hebergements {
-    width: 65%;
-}
-
-/****** Populaires ***********/
-.populaires {
-    width: 32%;
-}
-
-.populaires-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.populaires-cards .card {
-    display: flex;
-    margin-top: 33px;
-}
-
-.populaires-cards img {
-    width: 33%;
-    height: 136px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-
-.populaires-cards .card-content {
-    width: 67%;
-    padding-left: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
-}
-
-.populaires-cards .card-title {
-    margin-top: 10px;
-    margin-bottom: 4px;
-}
-
-.populaires-cards .card-subtitle {
-    margin: 0;
-}
-
-.populaires-cards .card-rating {
-    margin-bottom: 5px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*mon code*/
+/*  SECTION -- HEADER  */
 header {
     display: flex;
     justify-content: space-between;
-    padding: 30px 50px;
+    padding: 35px 0px;
 
 }
-.nav-header {
+.header-nav {
     display: flex;
     gap: 68px;
     list-style: none;
 
 }
-.nav-header a:hover {
+.header-nav a:hover {
     color: var(--main-color);
     border-top: 2px solid var(--main-color);
     padding-top: 28px;  /*je n'ai pas vu d'indication dans figma contenant ke nb de pixel du padding alors j'ai invienté*/
@@ -161,41 +92,45 @@ header {
     width: 61.9px;
 }
 
-.principale-section{
-    padding: 50px;
-}
-.main-title{
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-.main-subtitle{
-    font-size: 16px;
-    font-weight: 400;
-    margin-bottom: 35px;
-}
-/*Fonction rechercher*/
-.search-form{
-    border-radius: 15px;
+/*  SECTION PRINCIPALE -- première section  */
+
+.main-section{
+    padding: 50px 0px;
     display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+.main-txt{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+h1{
+    font-size: 22px;
+}
+
+
+/*Fonction rechercher -- formulaire */
+.search-form{
+    display: flex;
+    width: 28%;
+    height: 49px;
 
 }
-.localisation-icone{
+.localisation-icon{
     background-color: #F2F2F2;
-    box-sizing: border-box;
     padding: 15px 16px;
     border-radius: 15px 0px 0px 15px;
     color: black;
 
 }
 #search{
-    padding: 15px 16px;
     font-weight: 700;
     font-size: 18px;
     border-top: 1px solid #F2F2F2;
     border-bottom: 1px solid #F2F2F2;
     border-left: none;
-    max-width: 100%;
+    border-right: none;
 }
 .search-button{
     padding: 15px 16px;
@@ -205,7 +140,9 @@ header {
     background-color: #0065FC;
     border-radius: 0px 15px 15px 0px;
     border: none;
-    margin-left: -5px;
+}
+.search-button{
+    cursor: pointer;
 }
 input::placeholder {
     color: black;
@@ -214,128 +151,182 @@ input::placeholder {
 .loupe-icone-search{
     display: none;
 }
-/*section principal -- filtres*/
-.filtres-title{
+
+/*  Fonction Filtre -- SECTION PRINCIPALE  */
+
+.filter-title{
     font-size: 18px;
 }
-.filtres-header{
+.filter{
     display: flex;
-    margin-top: 35px;
     align-items: center;
     gap: 15px;
 }
-.four-card-filtres{
+.four-filter-card{
     display: flex;
     height: 50px;
     gap: 15px;
     flex-wrap: wrap;
 }
-.card-filtres {
+.filter-card {
     display: flex;
-    border: 2px solid #D9D9D9;
+    border: 2px solid var(--border-color);
     border-radius: 25px;
     gap: 10px;
-    justify-content: center;
     align-items: center;
     padding: 4px 19px;
 }
 
-.card-filtres h3{
+.filter-card h3{
     font-size: 17px;
-    font-weight: 700;
-
 }
-.card-filtres:hover {
+.filter-card:hover {
     background-color: var(--filter-bg-color);
     cursor: pointer;
 }
 
-/*section principale -- fin section*/
-.final-section-header{
+/*  Fin Section -- SECTION PRINCIPALE  */
+
+.final-section-main{
     display: flex;
     gap: 10px;
-    margin-top: 35px;
+    align-items: center;
 }
-/*pas besoin de modifs sur le p puyisque c'est les réglages préenregister*/
+.icon-final-section-main{
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 
+/* HEBERGEMENTS ET POPULAIRES -- SECTION -- accommodation and popular*/
 
-/* mon code -- section hebergements*/
+.accommodation-and-popular {
+    display: flex;
+    justify-content: space-between;
+}
 
-
-.card-hebergement {
-    background-color: white;
+.accommodation-and-popular section {
+    background-color: var(--main-bg-color);
     border-radius: 20px;
-    /*padding: 5px; le laisser parce que normalement il faut la bordure de 5px*/
-    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+    padding: 30px;
+    box-sizing: border-box;
 }
+/* Section Hebergement Accommodation -- SECTION HEBERGEMENTS ET POPULAIRES */
 
-.card-hebergement img {
-    object-fit: cover;
-    width: 250px;
-    height: 124px;
-    border-radius: 20px 20px 0px 0px;
-}
-
-.card-content-hebergement{
-    padding: 8px 15px;
-}
-.card-subtitle-hebergement{
-    padding-bottom: 8px;
-}
-.card-title-hebergement{
-    font-size: 16px;
-    padding-bottom: 8px;
-}
-.populaires-cards-hebergements {
+.section-cards-hebergements {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
-    padding-bottom: 35px;
+    padding-bottom: 30px;
 }
-.section-title-hebergement{
-    margin-bottom: 30px;
+#accommodation {
+    width: 65%; 
 }
-.lien-plus-hebergement{
-    font-size: 16px;
-    font-weight: 700;
-    margin-top: 50px;
-    padding-top: 50px;
+.a-card-accommodation{
+    width: 30.8%;
 }
-
-
-
-
-/*section activités*/
-
-.activites{
+.card-accommodation {
     background-color: white;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    border-radius: 20px;
+    padding: 5px; 
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+.card-accommodation img {
+    object-fit: cover;
+    width: 100%;
+    height: 124px;
+    border-radius: 20px 20px 0px 0px;
+}
+.card-accommodation .card-content{
+    padding: 8px 15px;
+}
+.card-accommodation .card-subtitle{
+    padding-bottom: 8px;
+}
+.card-accommodation .card-title{
+    font-size: 16px;
+    padding-bottom: 8px;
 }
 
-.section-title-activites{
-    margin-bottom: 30px;
+
+/* Section Populaires Popular -- SECTION HEBERGEMENTS ET POPULAIRES */
+.popular {
+    width: 32%;
 }
-.section-activites-cards{
+.popular-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.popular-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popular-cards .card {
+    display: flex;
+}
+
+.popular-cards img {
+    width: 33%;
+    height: 136px;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.popular-cards .card-content {
+    /*width: 67%;*/
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.popular-cards .card-title {
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+.popular-cards .card-subtitle {
+    margin: 0;
+}
+
+.popular-cards .card-rating {
+    margin-bottom: 5px;
+}
+
+/* SECTION Activités ACTIVITIES*/
+
+#activities{
+    margin: 50px 0px;
+}
+
+.section-activities-cards{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     
 }
-.a-activites-card {
+.a-activities-card {
+    background-color: white;
     border-radius: 20px;
-    width: 23%;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+    width: 23%;
 }
-.activites-card img{
+.activities-card img{
     object-fit: cover;
     width: 100%;
     height: 380px;
     border-radius: 20px 20px 0px 0px;
 }
-.activites-card-title{
+.activities-card-title{
     font-weight: 700;
     font-size: 16px;
     padding: 20px 19px;
@@ -343,33 +334,25 @@ input::placeholder {
 }
 
 
+/*  FOOTER  */
 
-
-
-/*footer*/
-
+ul{
+    padding: 0;
+}
 footer{
     background-color: var(--main-bg-color);
     padding: 30px;
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
     max-width: 100%;
 }
 .footer-column{
     display: flex;
     flex-direction: column;
-    padding-bottom: 10px;
+    gap: 15px;
 }
 .footer-column h3{
     font-size: 18px;
-    font-weight: 700;
-    padding-bottom: 15px;
-}
-.footer-column a{
-    font-size: 16px;
-    font-weight: 400;
-    padding-bottom: 15px;
 }
 
 
@@ -377,9 +360,11 @@ footer{
 
 
 
-/* Le code ci-dessous correspond à la version responsive uniquement */
 
-/****** Media queries ***********/
+
+
+/* RESPONSIVE --  Media queries **/
+
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
 
@@ -391,43 +376,43 @@ footer{
         box-sizing: border-box;
     }
 
-    .hebergements-and-populaires {
+    .accommodation-and-popular {
         flex-direction: column;
     }
 
-    .hebergements {
+    #accommodation {
         width: 100%;
     }
 
-    .a-card-hebergement{
+    .a-card-accommodation{
         width: 30%;
     }
-    .card-hebergement img{
+    .card-accommodation img{
         width: 100%;
     }
-    .populaires {
+    .popular {
         width: 100%;
         margin-top: 50px;
     }
 
-    .populaires-cards {
+    .popular-cards {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
 
-    .populaires-cards a {
+    .popular-cards a {
         width: 30%;
     }
-    .populaires-cards img{
+    .popular-cards img{
         height: 146px;
     }
 
-    .populaires-cards .card-title {
+    .popular-cards .card-title {
         font-size: 14px;
     }
 
-    .populaires-cards .card-subtitle {
+    .popular-cards .card-subtitle {
         font-size: 13px;
     }
 
@@ -440,7 +425,7 @@ footer{
 
     /*section principale*/
 
-    .filtres-header{
+    .filter{
         flex-direction: column;
         align-items: flex-start;
     }
@@ -471,12 +456,12 @@ footer{
         padding-top: 30px;
         padding-bottom: 30px;
     }
-    .nav-header{
+    .header-nav{
         display: flex;
         justify-content: space-between;
         padding: 0;
     }
-    .nav-header a:hover {
+    .header-nav a:hover {
         border-bottom: 2px solid var(--main-color);
         border-top: 0px;
         padding-bottom: 15px;  /*je n'ai pas vu d'indication dans figma contenant ke nb de pixel du padding alors j'ai invienté*/
@@ -502,71 +487,74 @@ footer{
 
     /*Filtres*/
 
-    .filtres-header{
+    .filter{
         gap: 10px;
     }
-    .card-filtres{
+    .filter-card{
         width: calc(50% - 8px);
         height: 50px;
         box-sizing: border-box;
     }
-    .four-card-filtres{
+    .four-filter-card{
         display: flex;
         padding-bottom: 50px;
     }
+    .filter-card h3{
+        font-size: 14px;
+    }
 
 
 
 
-    .a-activites-card {
+    .a-activities-card {
     width: 100%;
     }
-    .activites-card img{
+    .activities-card img{
     height: 141px;
     }
 
     /*hebergements et populaires*/
-    .hebergements-and-populaires {
+    .accommodation-and-popular{
         flex-direction: column-reverse;
     }
 
-    .hebergements-and-populaires section {
+    .accommodation-and-popular section {
     border-radius: 0px;
     padding: 30px 0px;
     background-color: white;
     }
-    .principale-section{
+    .main-section{
         padding: 20px;
         padding-top: 35px;
     }
 
 
     /*hebergements*/
-    .hebergements {
+    #accommodation {
         width: 100%;
     }
-    .a-card-hebergement {
+    .a-card-accommodation {
     width: 100%;
 }
 
-    .card-hebergement img {
+    .card-accommodation img {
     width: 100%;
     height: 124px;
 }
 
     /*populaire*/
-    .populaires section{
+    .popular section{
         width: 100%;
         /*margin: auto;*/
         margin-bottom: 35px;
         background-color: #D9D9D9;
     }
 
-    .populaires-cards {
+    .popular-cards {
         display: flex;
         flex-direction: column;
     }
-    .populaires-cards a {
+    .popular-cards a {
         width: 100%;
     }
 
