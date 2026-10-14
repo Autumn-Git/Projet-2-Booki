@@ -19,6 +19,7 @@
 body {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 .main-container {
     width: 100%;
@@ -313,32 +314,27 @@ input::placeholder {
 
 /*  FOOTER  */
 
-
+ul{
+    padding: 0;
+}
 footer{
-    margin: 50px 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
     background-color: var(--main-bg-color);
     padding: 30px;
     display: flex;
-    justify-content: space-between;
-    max-width: 100%;
+    /*max-width: 1440px;
+    box-sizing: border-box;*/
+    width: calc(100% - 160px);
+    margin: auto;
 }
 .footer-column{
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 33%;
 }
 .footer-column h3{
     font-size: 18px;
 }
-/*.main-section{
-    padding: 50px 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-}*/
 
 
 
@@ -433,6 +429,7 @@ footer{
         padding: 30px 0px;
     }
     .header-nav{
+
         text-align: center;
         gap: 0px;
     }
@@ -499,7 +496,7 @@ footer{
     }
     .activities-card img{
     height: 141px;
-    }*/
+    }
 
 
     /*SECTION PRINCIPALE*/
@@ -552,5 +549,10 @@ footer{
     footer{
         gap: 50px;
         flex-direction: column;
+        width: 100%;
+        /*margin-top: 35px;
+        margin-bottom: 0px;
+        max-width: none;*/
+        
     }
     }
