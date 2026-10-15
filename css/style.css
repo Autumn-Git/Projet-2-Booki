@@ -32,11 +32,6 @@ a {
     color: inherit;
     text-decoration: none;
 }
-/*.section-title {.  remplassé par le H2
-    margin: 0;
-    font-size: 22px;
-    padding-bottom: 30px;
-}. */
 .card {
     background-color: white;
     border-radius: 20px;
@@ -50,7 +45,7 @@ h2{
     font-size: 22px;
     padding-bottom: 30px;
 }
-h3{
+h3, span{
     font-size: 16px;
 }
 .card-title {
@@ -79,7 +74,7 @@ header {
 .header-nav a:hover {
     color: var(--main-color);
     border-top: 2px solid var(--main-color);
-    padding-top: 28px;  /*je n'ai pas vu d'indication dans figma contenant ke nb de pixel du padding alors j'ai invienté*/
+    padding-top: 33px;  /*le padding top fait 35px - 2px de bordure donc 33px*/
 }
 .header-logo {
     width: 61.9px;
@@ -103,43 +98,50 @@ h1{
 }
 
 /*Fonction rechercher -- formulaire */
-.search-form{
-    display: flex;
-    width: 28%;
-    height: 49px;
+.search-form { 
+    display: flex; 
+    width: 28%; 
+    height: 49px; 
 }
-.localisation-icon{
-    background-color: #F2F2F2;
-    padding: 15px 16px;
-    border-radius: 15px 0px 0px 15px;
-    color: black;
+.localisation-icon { 
+    display: flex; 
+    align-items: center; 
+    padding: 0 16px; 
+    background: #F2F2F2; 
+    border-radius: 15px 0 0 15px; 
 }
-#search{
-    font-weight: 700;
-    font-size: 18px;
-    border-top: 1px solid #F2F2F2;
-    border-bottom: 1px solid #F2F2F2;
-    border-left: none;
-    border-right: none;
+#search { 
+    flex: 1; 
+    /*min-width: 0; 
+    width: 0; */
+    border: 1px solid #F2F2F2; 
+    border-left: 0; 
+    border-right: 0; 
+    font-size: 16px; 
+    font-weight: 700; 
 }
-.search-button{
-    padding: 15px 16px;
-    font-weight: 700;
-    font-size: 18px;
-    color: white;
-    background-color: #0065FC;
-    border-radius: 0px 15px 15px 0px;
-    border: none;
+input::placeholder { 
+    color: black; 
+    text-align: center; 
 }
-.search-button{
-    cursor: pointer;
+.search-button, .loupe-icone-search { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 0 16px; 
+    border: none; 
+    background: #0065FC; 
+    color: white; 
+    font-size: 16px; 
+    font-weight: 700; 
+    cursor: pointer; 
 }
-input::placeholder {
-    color: black;
-    text-align: center;
+.search-button { 
+    border-radius: 0 15px 15px 0; 
 }
-.loupe-icone-search{
-    display: none;
+.loupe-icone-search { 
+    display: none; 
+    border-radius: 15px; 
 }
 
 /*  Fonction Filtre -- SECTION PRINCIPALE  */
@@ -166,8 +168,9 @@ input::placeholder {
     align-items: center;
     padding: 4px 19px;
 }
-.filter-card h3{
+.filter-card span{
     font-size: 17px;
+    font-weight: 700;
 }
 .filter-card:hover {
     background-color: var(--filter-bg-color);
@@ -190,7 +193,6 @@ input::placeholder {
     align-items: center;
     justify-content: center;
 }
-
 
 /* HEBERGEMENTS ET POPULAIRES -- SECTION -- accommodation and popular*/
 
@@ -241,6 +243,9 @@ input::placeholder {
     font-size: 16px;
     padding-bottom: 8px;
 }
+.section-title{
+    padding-bottom: 0px;
+}
 
 /* Section Populaires Popular -- SECTION HEBERGEMENTS ET POPULAIRES */
 .popular {
@@ -255,6 +260,7 @@ input::placeholder {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 35px;
 }
 .popular-cards .card {
     display: flex;
@@ -337,8 +343,6 @@ footer{
 }
 
 
-
-
 /* RESPONSIVE --  Media queries **/
 
 /* Medium devices (tablets, less/equal than 1024px) */
@@ -357,11 +361,13 @@ footer{
         padding: 0 50px;
         box-sizing: border-box;
     }
-
     /*  Section Principale -- FILTRES  */
     .filter{
         flex-direction: column;
         align-items: flex-start;
+    }
+    .icon-final-section-main{
+        width: 35px;
     }
 
     /* Section Hebergement Accommodation -- SECTION HEBERGEMENTS ET POPULAIRES */
@@ -415,7 +421,7 @@ footer{
         width: 100%;
         max-width: 767.98px;
         min-width: 320px;
-        padding: 0 20px;
+        padding: 0;
         box-sizing: border-box;
     }
 
@@ -429,7 +435,6 @@ footer{
         padding: 30px 0px;
     }
     .header-nav{
-
         text-align: center;
         gap: 0px;
     }
@@ -449,22 +454,23 @@ footer{
     }
 
     /*  SECTION PRINCIPALE -- première section  */
-    .loupe-icone-search{
-        display: flex;
-        background-color: #0065FC;
-        color: white;
-        padding: 15px 16px;
-        margin-left: -15px;
-        border-radius: 15px;
-        border: none;
-        cursor: pointer;
+    .main-section{
+        padding-top: 35px;
+        padding-right: 20px;
+        padding-left: 20px;
     }
-    .search-button{
-        display: none;
-    }
-    form{
+    /* FORMULAIRE FILTRE*/
+    .search-form { 
         width: 100%;
     }
+    .search-button { 
+         display: none; 
+    }
+    .loupe-icone-search { 
+        display: flex; 
+        margin-left: -15px; 
+    }
+
     .final-section-main{
         margin-top: 35px;
     }
@@ -477,6 +483,8 @@ footer{
         width: calc(50% - 8px);
         height: 50px;
         box-sizing: border-box;
+        display: flex;
+        justify-content: center;
     }
     .four-filter-card{
         display: flex;
@@ -487,40 +495,37 @@ footer{
     }
 
     /* SECTION Activités ACTIVITIES*/
+    #activities{
+        padding: 20px;
+    }
     .section-activities-cards{
-    flex-direction: column;
-    gap: 15px;  
+        flex-direction: column;
+        gap: 15px;  
     }
     .a-activities-card{
-    width: 100%;
+        width: 100%;
     }
     .activities-card img{
-    height: 141px;
+        height: 141px;
     }
-
 
     /*SECTION PRINCIPALE*/
     /*hebergements et populaires*/
-    .main-section{
-        padding: 20px;
-        padding-top: 35px;
-    }
 
     .accommodation-and-popular{
         flex-direction: column-reverse;
         margin: 0;
     }
-
     .accommodation-and-popular section {
         border-radius: 0px;
         padding: 30px 0px;
         background-color: white;
         margin-top: 0;
     }
-
     /* Section Hebergement Accommodation -- SECTION HEBERGEMENTS ET POPULAIRES */
     #accommodation {
         width: 100%;
+        padding: 20px;
     }
     .a-card-accommodation {
         width: 100%;
@@ -531,12 +536,11 @@ footer{
     }
 
     /* Section Populaires Popular -- SECTION HEBERGEMENTS ET POPULAIRES */
-    .popular section{
+    section.popular{
         width: 100%;
-        margin-bottom: 35px;
-        background-color: #D9D9D9;
+        background-color: var(--main-bg-color);
+        padding: 20px;
     }
-
     .popular-cards {
         display: flex;
         flex-direction: column;
@@ -549,10 +553,9 @@ footer{
     footer{
         gap: 50px;
         flex-direction: column;
+        width: 84%;
+    }
+    .footer-column{
         width: 100%;
-        /*margin-top: 35px;
-        margin-bottom: 0px;
-        max-width: none;*/
-        
     }
     }
