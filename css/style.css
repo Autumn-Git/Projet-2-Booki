@@ -1,9 +1,7 @@
 /****** General ***********/
-/*Problèmes sur desktop : le footer*/
 * {
     font-family: 'Raleway', sans-serif;
     margin: 0;
-    /*outline: 2px solid red;*/
 }
 :root {
     --main-color: #0065FC;
@@ -544,4 +542,4 @@ footer{
     .footer-column{
         width: 100%;
     }
-    }
+}

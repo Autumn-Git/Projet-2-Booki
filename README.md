@@ -1,116 +1,190 @@
-# Booki : intégration HTML & CSS
 
-Projet de formation OpenClassrooms : créer la page d'accueil d'une agence de voyage en intégrant une maquette Figma en **HTML et CSS purs**.
+# Booki : page d'accueil d'une agence de voyage
+ 
+Intégration en **HTML et CSS purs** de la page d'accueil de **Booki**, une agence de voyage en ligne qui permet de trouver un hébergement et des activités dans la ville de son choix.
+ 
+Ce projet est réalisé dans le cadre du **projet 2 de la formation Développeur Web d'OpenClassrooms**, à partir d'une maquette Figma (desktop, tablette et mobile).
+ 
+---
+ 
+## Aperçu
+ 
+### Desktop
+ 
+![Aperçu de la page d'accueil Booki sur ordinateur](./images/screen/ordi.png)
+ 
+### Tablette et mobile
+ 
+<p>
+  <img src="./images/screen/tablette.png" alt="Aperçu de la page d'accueil Booki sur tablette" width="58%">
+  &nbsp;
+  <img src="./images/screen/mobile.png" alt="Aperçu de la page d'accueil Booki sur mobile" width="32%">
+</p>
 
 ---
 
-## 📋 Le projet
+## Sommaire
 
-**Booki** est une agence de voyage en ligne. Votre mission est d'intégrer la maquette de sa page d'accueil en respectant les spécifications fonctionnelles et techniques fournies.
+- [Fonctionnalités](#fonctionnalités)
+- [Stack technique](#stack-technique)
+- [Prérequis](#prérequis)
+- [Installation et lancement](#installation-et-lancement)
+- [Structure du projet](#structure-du-projet)
+- [Choix techniques](#choix-techniques)
+- [Responsive](#responsive)
+- [Accessibilité](#accessibilité)
+- [Qualité du code](#qualité-du-code)
+- [Compatibilité](#compatibilité)
+- [Crédits](#crédits)
+- [Auteur](#auteur)
 
-### Ce que vous allez créer
+---
 
-- Un **header** avec logo et navigation
-- Une **barre de recherche** avec filtres
-- Une **section hébergements** (6 cartes en grille)
-- Une **section activités** (4 cartes)
-- Un **footer** en 3 colonnes
-- Un design **responsive** : desktop → tablette → mobile
+## Fonctionnalités
 
-### Contraintes techniques
+- **Header** avec logo et navigation : les liens *Hébergements* et *Activités* mènent aux sections correspondantes de la page (ancres).
+- **Formulaire de recherche** de destination (non fonctionnel, intégration visuelle uniquement).
+- **Filtres** (Économique, Familial, Romantique, Nos pépites) avec un changement de couleur au survol.
+- **Hébergements à Marseille** : 6 cartes cliquables (photo, nom, prix, note).
+- **Les plus populaires** : 3 cartes mises en avant.
+- **Activités à Marseille** : 4 cartes cliquables.
+- **Footer** en 3 colonnes de liens.
+- **Mise en page responsive** sur 3 formats : desktop, tablette et mobile.
 
-| Règle | Détail |
+> Les liens et le formulaire ne sont pas reliés à un back-end : il s'agit d'une intégration statique.
+
+---
+
+## Stack technique
+
+| Technologie | Utilisation |
 |---|---|
-| Langages autorisés | HTML et CSS uniquement |
-| Mise en page | Flexbox ou CSS Grid |
-| Approche | Desktop first |
-| Breakpoints | `>1024px` desktop · `≥768px` tablette · `<768px` mobile |
-| Largeur max | 1440px |
-| Validité | W3C HTML + CSS (0 erreur) |
-| Navigateurs | Chrome et Firefox (dernières versions) |
+| **HTML5** | Structure sémantique de la page |
+| **CSS3** | Mise en forme, Flexbox, variables CSS, media queries |
+| **[Font Awesome 6.2.1](https://fontawesome.com/)** | Icônes (chargées via CDN) |
+| **[Google Fonts : Raleway](https://fonts.google.com/specimen/Raleway)** | Police du projet (chargée via CDN) |
+| **[Figma](https://www.figma.com/)** | Maquettes de référence |
+| **Git et GitHub** | Versionnement du code |
+
+Aucun framework, aucune bibliothèque CSS et aucun JavaScript : le projet repose uniquement sur HTML et CSS.
 
 ---
 
-## 🤖 Companion : votre assistant IA
+## Prérequis
 
-Ce repository inclut **Companion**, un assistant pédagogique configuré pour vous aider sur ce projet via **GitHub Copilot** dans VS Code.
+- Un **navigateur récent** : Google Chrome ou Mozilla Firefox (dernières versions).
+- **[Git](https://git-scm.com/)** pour cloner le dépôt.
+- Une **connexion Internet**, pour charger la police Raleway et les icônes Font Awesome depuis leur CDN.
+- *Optionnel :* **[VS Code](https://code.visualstudio.com/)** 
 
-> Companion ne donne pas les réponses directement : il vous guide par des questions et des indices pour que vous trouviez la solution par vous-même.
-
-### Prérequis
-
-- [VS Code](https://code.visualstudio.com/)
-- Extension **GitHub Copilot** installée et active grâce à votre certificat de scolarité OpenClassrooms
-- Extension **GitHub Copilot Chat** installée et active
+Aucune installation de dépendances n'est nécessaire (pas de `npm install`).
 
 ---
 
-## 🚀 Utiliser Companion dans VS Code
+## Installation et lancement
 
-### 1. Ouvrez le Chat Copilot
+### 1. Cloner le dépôt
 
-Cliquez sur l'icône **Toggle Chat** à droite de la barre de recherche de commande. 
-
-### 2. Posez vos questions
-
-Directement en langage naturel, en français :
-
-```
-Je dois faire quoi pour la section hébergements en HTML ?
+```bash
+git clone https://github.com/Autumn-Git/Projet-2-Booki.git
 ```
 
-```
-Mon header ne s'aligne pas correctement, comment vérifier ?
-```
+### 2. Lancer le projet
 
-```
-Quel media utiliser pour le mobile, je comprends pas ?
-```
+Ouvrir le fichier `index.html` dans votre navigateur (double-clic ou glisser-déposer).
 
-### 3. Ouvrez vos fichiers dans l'éditeur
 
-Pour que Companion analyse votre code, **gardez `index.html` et `css/style.css` ouverts** dans l'éditeur avant de poser une question. Copilot inclura automatiquement leur contenu dans le contexte.
+### 3. Tester le responsive
+
+Ouvrir les outils de développement du navigateur (`F12`, ou `Cmd + Option + I` sur Mac), puis activer la **vue appareil** pour tester les largeurs **1440, 1024, 768, 767 et 375 px**.
 
 ---
 
-## 📁 Structure du repository
+## Structure du projet
 
 ```
-Test-Booki-avec-Companion/
-├── index.html
-├── README.md
-├── agents.md
-├── .vscode/
+Projet-2-Booki/
+├── index.html          # Page d'accueil
 ├── css/
+│   └── style.css       # Feuille de style unique (desktop first + media queries)
 ├── images/
-└── companion/
-    ├── 01-identite-contexte.agent.md
-    ├── 02-approche-pedagogique.agent.md
-    ├── 03-presentation-projet-booki.agent.md
-    ├── 04-starter-pack-etudiant.agent.md
-    ├── 05-specifications-fonctionnelles.agent.md
-    ├── 06-specifications-techniques.agent.md
-    └── 07-checklist-validation.agent.md
+│   ├── logo/           # Logo Booki
+│   ├── hebergements/   # Photos des cartes hébergements
+│   ├── activites/      # Photos des cartes activités
+│   └── screen/         # Photos du sites
+├── companion/          # Fichiers de l'assistant pédagogique fournis par OpenClassrooms
+├── agents.md           # Configuration de l'assistant pédagogique (OpenClassrooms)
+├── .gitignore
+└── README.md
 ```
----
-
-## 💡 Conseils pour bien démarrer
-
-1. **Lisez le code fourni** : la section *Les plus populaires* dans `index.html` est votre exemple de référence.
-2. **Observez avant de coder** : comparez la maquette et le code existant avant d'écrire une seule ligne.
-3. **Avancez section par section** : Header → Recherche → Hébergements → Activités → Footer → Responsive.
-4. **Validez régulièrement** : utilisez le [validateur W3C HTML](https://validator.w3.org/) et [CSS](https://jigsaw.w3.org/css-validator/) tout au long du projet.
-5. **Utilisez les DevTools** : `F12` dans votre navigateur est votre meilleur allié pour débugger.
 
 ---
 
-## 🔗 Ressources utiles
+## Choix techniques
 
-- [Cours OpenClassrooms : Mettez en place votre environnement front-end](https://openclassrooms.com)
-- [Cours OpenClassrooms : Apprenez à créer votre site web avec HTML5 et CSS3](https://openclassrooms.com)
-- [MDN Web Docs](https://developer.mozilla.org/fr/) : Documentation HTML & CSS
-- [Validateur HTML W3C](https://validator.w3.org/)
-- [Validateur CSS W3C](https://jigsaw.w3.org/css-validator/)
-- [Font Awesome](https://fontawesome.com/icons) : Bibliothèque d'icônes utilisée
-- [Google Fonts — Raleway](https://fonts.google.com/specimen/Raleway) : Police du projet
-- [Can I Use](https://caniuse.com/) : Compatibilité des propriétés CSS
+- **Desktop first** : les styles de base correspondent à la version desktop, puis des media queries adaptent l'affichage aux écrans plus petits.
+- **Flexbox** pour toute la mise en page (header, filtres, grilles de cartes, footer).
+- **Variables CSS** (`:root`) pour les couleurs de la charte, afin de les modifier à un seul endroit :
+
+  | Variable | Couleur | Usage |
+  |---|---|---|
+  | `--main-color` | `#0065FC` | Couleur principale (liens, icônes, bouton) |
+  | `--main-bg-color` | `#F2F2F2` | Fonds gris (sections, footer) |
+  | `--filter-bg-color` | `#DEEBFF` | Fond des filtres au survol |
+  | `--border-color` | `#D9D9D9` | Bordures |
+  | `--white` | `#FFFFFF` | Fond de section
+
+- **Largeur maximale** du contenu fixée à **1440 px**.
+
+---
+
+## Responsive
+
+| Format | Largeur | Principales adaptations |
+|---|---|---|
+| **Desktop** | > 1024 px | Hébergements et Populaires côte à côte, 4 activités sur une ligne, footer en 3 colonnes |
+| **Tablette** | 768 px à 1024 px | Populaires sous les Hébergements, cartes populaires sur une ligne, filtres sous leur titre |
+| **Mobile** | < 768 px | Une colonne, Populaires affichés avant les Hébergements, header centré avec onglets, bouton de recherche en icône loupe, filtres deux par deux, footer pleine largeur et colonnes empilées |
+
+---
+
+## Accessibilité
+
+- Balises **sémantiques** : `header`, `nav`, `main`, `section`, `article`, `aside`, `footer`, `form`.
+- Hiérarchie de titres cohérente (`h1`, `h2`, `h3`).
+- **Texte alternatif** (`alt`) sur toutes les images.
+- Icônes décoratives masquées aux lecteurs d'écran avec `aria-hidden="true"`.
+- Attribut `lang="fr"` sur la page.
+
+---
+
+## Qualité du code
+
+Le code doit passer sans erreur les validateurs du W3C :
+
+- HTML : [validator.w3.org](https://validator.w3.org)
+- CSS : [jigsaw.w3.org/css-validator](https://jigsaw.w3.org/css-validator/)
+
+---
+
+## Compatibilité
+
+Testé sur les dernières versions de **Google Chrome**, **Mozilla Firefox** et **Safari**.
+
+---
+
+## Crédits
+
+- **Maquettes et ressources graphiques** (logo, photographies) : fournies par [OpenClassrooms](https://openclassrooms.com/) dans le cadre de la formation.
+- **Icônes** : [Font Awesome](https://fontawesome.com/).
+- **Police** : [Raleway](https://fonts.google.com/specimen/Raleway), via Google Fonts.
+
+---
+
+## Auteur
+
+**Autumn-Git** : [github.com/Autumn-Git](https://github.com/Autumn-Git)
+
+Projet réalisé dans le cadre de la formation **Développeur Web** d'OpenClassrooms.
+
+> Ce projet a une vocation pédagogique et n'est pas destiné à un usage commercial.
