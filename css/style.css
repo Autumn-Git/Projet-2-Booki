@@ -20,6 +20,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  gap: 35px; 
 }
 
 .main-container {
@@ -65,11 +66,17 @@ ul {
   padding: 0;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
 /*SECTION--HEADER*/
 header {
   display: flex;
   justify-content: space-between;
-  padding: 30px 0px;
+  margin: 30px 0px; 
 }
 
 .header-navigation {
@@ -81,16 +88,17 @@ header {
 .header-navigation a:hover {
   color: var(--main-color);
   border-top: 2px solid var(--main-color);
-  padding-top: 28px; /*le padding top fait 30px - 2px de bordure donc 28px*/
+  padding-top: 28px;
 }
 
 .header-logo {
   width: 61.9px;
+  height: 19px;
 }
 
 /*SECTION PRINCIPALE--première section*/
 .search-section {
-  padding: 50px 0px;
+  padding: 50px 0 0 0;
   display: flex;
   flex-direction: column;
   gap: 35px;
@@ -114,6 +122,7 @@ h1 {
   padding: 0 16px;
   background: var(--main-bg-color);
   border-radius: 15px 0 0 15px;
+  color: black;
 }
 
 #search {
@@ -175,6 +184,10 @@ input::placeholder {
   font-weight: 700;
 }
 
+.filter-icon {
+    font-size: 22px;
+}
+
 .filters {
   display: flex;
   align-items: center;
@@ -229,10 +242,15 @@ input::placeholder {
   flex-shrink: 0;
 }
 
+.availability-info i {
+    font-size: 10px;
+}
+
 /*HEBERGEMENTS ET POPULAIRES--SECTION--accommodation and popular*/
 .accommodation-and-popular {
   display: flex;
   justify-content: space-between;
+  gap: 40px;
 }
 
 .accommodation-and-popular section {
@@ -285,6 +303,10 @@ input::placeholder {
   font-weight: 700;
 }
 
+i.fa-xs.fa-solid.fa-star {
+    font-size: 14px;
+}
+
 /*Section Populaires Popular--SECTION HEBERGEMENTS ET POPULAIRES*/
 .popular {
   width: 32%;
@@ -331,13 +353,10 @@ input::placeholder {
 
 /*SECTION Activités ACTIVITIES*/
 #activities {
-  margin: 50px 0px;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-.activities-title {
-  margin-bottom: 35px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 30px;
 }
 
 .activity-cards {
@@ -364,9 +383,8 @@ input::placeholder {
 /*FOOTER*/
 footer {
   background-color: var(--main-bg-color);
-  padding: 30px;
+  padding: 20px;
   display: flex;
-  margin: auto;
   box-sizing: border-box;
   width: calc(100% - 100px);
   max-width: 1340px;
@@ -387,7 +405,7 @@ footer {
 /*Medium devices (tablets, less/equal than 1024px)*/
 @media (max-width: 1024px) {
   .search-section {
-    padding: 35px 0px;
+    padding: 35px 0 0 0;
   }
 
   /*Section Principale--FILTRES*/
@@ -399,6 +417,7 @@ footer {
   /*Section Hebergement Accommodation--SECTION HEBERGEMENTS ET POPULAIRES*/
   .accommodation-and-popular {
     flex-direction: column;
+    gap: 50px;
   }
 
   #accommodation {
@@ -408,7 +427,6 @@ footer {
   /*Section Populaires Popular--SECTION HEBERGEMENTS ET POPULAIRES*/
   .popular {
     width: 100%;
-    margin-top: 50px;
   }
 
   .popular-cards {
@@ -448,7 +466,7 @@ footer {
   /*HEADER*/
   header {
     flex-direction: column;
-    padding: 0;
+    margin: 0;
   }
 
   .header-logo {
@@ -490,7 +508,7 @@ footer {
 
   #search {
     min-width: 0;
-    padding-right: 25px;
+    padding-right: 75px;
   }
 
   .search-button {
@@ -523,20 +541,14 @@ footer {
     font-size: 14px;
   }
 
-  /*Fin Section--SECTION PRINCIPALE*/
-  .availability-info {
-    margin-top: 15px;
-    margin-bottom: 35px;
-  }
-
   /*HEBERGEMENTS ET POPULAIRES--SECTION--accommodation and popular*/
   .accommodation-and-popular {
     flex-direction: column-reverse;
+    gap: 15px;
   }
 
   .accommodation-and-popular section {
     border-radius: 0px;
-    /*padding: 30px 0px;*/
     margin-top: 0;
   }
 
@@ -544,21 +556,31 @@ footer {
   #accommodation {
     padding: 20px;
     background-color: var(--white);
-    margin-top: 15px;
+    gap: 15px;
+  }
+
+  .accommodation-cards {
+    gap: 15px;
   }
 
   .accommodation-card-link {
     width: 100%;
   }
 
+  .show-more-link {
+    font-size: 18px;
+  }
+
   /*Section Populaires Popular--SECTION HEBERGEMENTS ET POPULAIRES*/
   section.popular {
     background-color: var(--main-bg-color);
     padding: 20px;
+    gap: 15px;
   }
 
   .popular-cards {
     flex-direction: column;
+    gap: 15px;
   }
 
   .popular-card-link {
@@ -568,7 +590,6 @@ footer {
   /*SECTION Activités ACTIVITIES*/
   #activities {
     padding: 20px;
-    /*margin: 30px 0px;*/
   }
 
   .activity-cards {
@@ -589,6 +610,7 @@ footer {
     gap: 50px;
     flex-direction: column;
     width: 100%;
+    padding: 30px;
   }
 
   .footer-column {
